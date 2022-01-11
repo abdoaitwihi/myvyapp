@@ -5,12 +5,15 @@ class PrimaryInput extends StatelessWidget {
   const PrimaryInput({
     Key? key,
     this.hintText,
+    this.autoFocus = false,
   }) : super(key: key);
 
   final hintText;
+  final autoFocus;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: autoFocus,
       decoration: InputDecoration(
         fillColor: greyColor,
         filled: true,

@@ -9,7 +9,7 @@ class AuthOuterContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.only(
-            top: defaultPadding * 3,
+            top: defaultPadding * 1,
             left: defaultPadding * 1.5,
             right: defaultPadding * 1.5),
         decoration: const BoxDecoration(

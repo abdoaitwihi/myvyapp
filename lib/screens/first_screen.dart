@@ -54,7 +54,9 @@ class FirstScreen extends StatelessWidget {
                   horizontal: defaultPadding * 2, vertical: 0),
               child: PrimaryButton(
                 text: 'SIGN UP',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
               ),
             ),
             addVerticalSpace(70)

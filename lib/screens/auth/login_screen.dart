@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          addVerticalSpace(20),
                           const Text(
                             'Welcome !',
                             style: title1,
@@ -75,7 +76,10 @@ class LoginScreen extends StatelessWidget {
                               ),
                               addVerticalSpace(20),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, '/forgotPassword');
+                                },
                                 child: const Text(
                                   'Forgot your password? ',
                                   style: text3,
@@ -101,7 +105,10 @@ class LoginScreen extends StatelessWidget {
                                 children: [
                                   Text('Don’t have an account? '),
                                   TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        Navigator.pushNamed(context, '/signup');
+                                      },
                                       child: const Text(
                                         'Sign up',
                                         style: text3,

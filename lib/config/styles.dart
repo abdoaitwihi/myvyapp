@@ -8,6 +8,8 @@ const double defaultPadding = 15;
 const double defaulBorderRadius = 14;
 
 const TextStyle title1 = TextStyle(fontSize: 36, fontWeight: FontWeight.bold);
+const TextStyle title2 = TextStyle(fontSize: 29, fontWeight: FontWeight.bold);
+const TextStyle title3 = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 const TextStyle text1 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: whiteColor);
 const TextStyle text2 = TextStyle(
@@ -16,3 +18,9 @@ const TextStyle text3 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: primaryColor);
 const TextStyle text4 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black);
+const TextStyle text5 =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black);
+const TextStyle text6 = TextStyle(
+    fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black38);
+const TextStyle text7 =
+    TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white);
