@@ -72,7 +72,9 @@ class LoginScreen extends StatelessWidget {
                               addVerticalSpace(30),
                               PrimaryButton(
                                 text: 'Sign IN',
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/home');
+                                },
                               ),
                               addVerticalSpace(20),
                               TextButton(

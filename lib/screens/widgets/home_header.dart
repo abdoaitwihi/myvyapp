@@ -32,15 +32,20 @@ class HomeHeader extends StatelessWidget {
                 width: 35,
               ),
               addHorizontalSpace(10),
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black54),
-                  borderRadius: BorderRadius.circular(8),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/search');
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: SvgPicture.asset('assets/icons/search.svg'),
+                  height: 35,
+                  width: 35,
                 ),
-                child: SvgPicture.asset('assets/icons/search.svg'),
-                height: 35,
-                width: 35,
               ),
             ],
           ),

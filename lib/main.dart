@@ -6,6 +6,8 @@ import 'package:myvy/screens/auth/login_screen.dart';
 import 'package:myvy/screens/auth/signup_screen.dart';
 import 'package:myvy/screens/first_screen.dart';
 import 'package:myvy/screens/home_screen.dart';
+import 'package:myvy/screens/salon_screen.dart';
+import 'package:myvy/screens/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
-        // '/': (context) => FirstScreen(),
+        '/home': (context) => HomeScreen(),
+        '/salon': (context) => SalonScreen(),
+        '/': (context) => FirstScreen(),
+        '/search': (context) => SearchScreen(),
         '/login': (context) => LoginScreen(),
         '/signup': (context) => SignUpScreen(),
         '/forgotPassword': (context) => ForgotPasswordScreen(),

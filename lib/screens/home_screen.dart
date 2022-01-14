@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myvy/config/styles.dart';
+import 'package:myvy/screens/widgets/bottom_nav_bar.dart';
 import 'package:myvy/screens/widgets/home_header.dart';
 import 'package:myvy/screens/widgets/nearest_salons.dart';
 import 'package:myvy/screens/widgets/search_bar.dart';
@@ -10,12 +11,18 @@ import 'package:myvy/utils/helpers.dart';
 import 'widgets/card_one.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
+  final List<Cat> categories = [
+    Cat(name: 'All', active: true, image: 'assets/images/card.png'),
+    Cat(name: 'Haircuts', active: false, image: 'assets/images/image2.png'),
+    Cat(name: 'Make up', active: false, image: 'assets/images/card.png'),
+    Cat(name: 'Waxing', active: false, image: 'assets/images/image2.png'),
+    Cat(name: 'Massage', active: false, image: 'assets/images/card.png'),
+    Cat(name: 'Haircuts', active: false, image: 'assets/images/image2.png'),
+  ];
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
         // height: size.height,
@@ -24,7 +31,11 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 HomeHeader(),
-                SearchBar(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  child: SearchBar(),
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25),
                   child: Row(
@@ -51,15 +62,12 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   height: 100,
-                  child: ListView(
+                  child: ListView.builder(
+                    itemCount: categories.length,
                     scrollDirection: Axis.horizontal,
-                    children: [
-                      CardOne(),
-                      CardOne(),
-                      CardOne(),
-                      CardOne(),
-                      CardOne(),
-                    ],
+                    itemBuilder: (context, index) {
+                      return CardOne(data: categories[index]);
+                    },
                   ),
                 ),
                 SingleAdCard(),
@@ -87,27 +95,15 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'sdfjlk',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-        currentIndex: 1,
-        selectedItemColor: Colors.amber[800],
-        onTap: (index) {},
-      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
+}
+
+class Cat {
+  String? name;
+  String? image;
+  bool? active;
+
+  Cat({this.name, this.active, this.image});
 }
