@@ -13,6 +13,8 @@ const TextStyle title3 = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 const TextStyle title4 = TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
 const TextStyle title5 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black);
+const TextStyle title6 =
+    TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: primaryColor);
 
 const TextStyle text1 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: whiteColor);

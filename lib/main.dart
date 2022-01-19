@@ -6,8 +6,9 @@ import 'package:myvy/screens/auth/login_screen.dart';
 import 'package:myvy/screens/auth/signup_screen.dart';
 import 'package:myvy/screens/first_screen.dart';
 import 'package:myvy/screens/home_screen.dart';
-import 'package:myvy/screens/salon_screen.dart';
+import 'package:myvy/screens/specialist_screen.dart';
 import 'package:myvy/screens/search_screen.dart';
+import 'package:myvy/screens/salon_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +25,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/speacialist-screen',
       routes: {
         '/home': (context) => HomeScreen(),
         '/salon': (context) => SalonScreen(),
+        '/speacialist-screen': (context) => SpecialistScreen(),
         '/': (context) => FirstScreen(),
         '/search': (context) => SearchScreen(),
         '/login': (context) => LoginScreen(),

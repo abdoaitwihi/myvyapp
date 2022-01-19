@@ -46,25 +46,30 @@ class SpecialistCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // width: 95,
-      margin: EdgeInsets.only(left: 25),
-      child: Column(
-        children: [
-          Image.asset(
-            specialist.image,
-            height: 80,
-          ),
-          addVerticalSpace(10),
-          Text(
-            specialist.name,
-            style: text4,
-          ),
-          Text(
-            specialist.subTitle,
-            style: text6,
-          )
-        ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/speacialist-screen');
+      },
+      child: Container(
+        // width: 95,
+        margin: EdgeInsets.only(left: 25),
+        child: Column(
+          children: [
+            Image.asset(
+              specialist.image,
+              height: 80,
+            ),
+            addVerticalSpace(10),
+            Text(
+              specialist.name,
+              style: text4,
+            ),
+            Text(
+              specialist.subTitle,
+              style: text6,
+            )
+          ],
+        ),
       ),
     );
   }

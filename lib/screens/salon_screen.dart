@@ -5,13 +5,16 @@ import 'package:myvy/config/styles.dart';
 import 'package:myvy/screens/widgets/about_salon.dart';
 import 'package:myvy/screens/widgets/bottom_nav_bar.dart';
 import 'package:myvy/screens/widgets/horizontal_padding.dart';
+import 'package:myvy/screens/widgets/icon_text_button.dart';
 import 'package:myvy/screens/widgets/opening_hours.dart';
 import 'package:myvy/screens/widgets/primary_button_2.dart';
 import 'package:myvy/screens/widgets/salon_categories.dart';
 import 'package:myvy/screens/widgets/salon_description.dart';
+import 'package:myvy/screens/widgets/salon_packages.dart';
 import 'package:myvy/screens/widgets/salon_rating.dart';
 import 'package:myvy/screens/widgets/salon_services.dart';
 import 'package:myvy/screens/widgets/salon_specialists.dart';
+import 'package:myvy/screens/widgets/small_button.dart';
 import 'package:myvy/utils/helpers.dart';
 import 'package:myvy/widgets/buttons/primary_button.dart';
 
@@ -94,17 +97,7 @@ class SalonScreen extends StatelessWidget {
                         ),
                       ),
                       // Spacer(),
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 7, horizontal: 15),
-                        decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Text(
-                          'Book now',
-                          style: text1,
-                        ),
-                      ),
+                      SmallButton(onPressed: () {}, text: 'Book now'),
                       addHorizontalSpace(25),
                     ],
                   ),
@@ -163,7 +156,8 @@ class SalonScreen extends StatelessWidget {
                   SalonCategories(),
                   addVerticalSpace(5),
                   // AboutSalon(),
-                  SalonServices(),
+                  // SalonServices(),
+                  SalonPackages(),
                   addVerticalSpace(100),
                   // Container(
                   //   // height: 500,
@@ -210,54 +204,9 @@ class SalonScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-              bottom: 10,
-              left: 0,
-              right: 0,
-              child: HorizontalPadding(
-                child: PrimaryButtonTwo(
-                  child: Text(
-                    'DONE',
-                    style: TextStyle(color: whiteColor, fontSize: 20),
-                  ),
-                  onPressed: () {},
-                ),
-              ))
         ],
       ),
       bottomNavigationBar: BottomNavBar(),
-    );
-  }
-}
-
-class IconTextButton extends StatelessWidget {
-  const IconTextButton({
-    Key? key,
-    this.icon,
-    this.text,
-    this.onPressed,
-  }) : super(key: key);
-  final icon;
-  final text;
-  final onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Column(
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: 30,
-          ),
-          addVerticalSpace(5),
-          Text(
-            text,
-            style: text5,
-          )
-        ],
-      ),
     );
   }
 }
