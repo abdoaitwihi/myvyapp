@@ -18,6 +18,8 @@ import 'package:myvy/screens/widgets/small_button.dart';
 import 'package:myvy/utils/helpers.dart';
 import 'package:myvy/widgets/buttons/primary_button.dart';
 
+import 'widgets/booking/booking.dart';
+
 class SalonScreen extends StatelessWidget {
   const SalonScreen({Key? key}) : super(key: key);
 
@@ -97,7 +99,16 @@ class SalonScreen extends StatelessWidget {
                         ),
                       ),
                       // Spacer(),
-                      SmallButton(onPressed: () {}, text: 'Book now'),
+                      SmallButton(
+                          onPressed: () {
+                            print('akd');
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) => booking(context),
+                                backgroundColor: Colors.transparent,
+                                isScrollControlled: true);
+                          },
+                          text: 'Book now'),
                       addHorizontalSpace(25),
                     ],
                   ),
@@ -210,3 +221,38 @@ class SalonScreen extends StatelessWidget {
     );
   }
 }
+
+Widget makeDismissable({required Widget child, context}) => GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        Navigator.of(context).pop();
+      },
+      child: GestureDetector(
+        onTap: () {},
+        child: child,
+      ),
+    );
+
+Widget booking(context) => makeDismissable(
+      context: context,
+      child: DraggableScrollableSheet(
+        initialChildSize: 0.7,
+        minChildSize: .6,
+        maxChildSize: 0.7,
+        builder: (_, controller) => Container(
+          padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+          decoration: BoxDecoration(
+            color: whiteColor,
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20),
+            ),
+          ),
+          child: ListView(
+            controller: controller,
+            children: [
+              Booking(),
+            ],
+          ),
+        ),
+      ),
+    );

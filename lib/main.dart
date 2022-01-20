@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/speacialist-screen',
+      initialRoute: '/salon',
       routes: {
         '/home': (context) => HomeScreen(),
         '/salon': (context) => SalonScreen(),
