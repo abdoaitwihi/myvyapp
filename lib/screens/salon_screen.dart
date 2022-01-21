@@ -1,22 +1,14 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myvy/config/styles.dart';
-import 'package:myvy/screens/widgets/about_salon.dart';
 import 'package:myvy/screens/widgets/bottom_nav_bar.dart';
-import 'package:myvy/screens/widgets/horizontal_padding.dart';
 import 'package:myvy/screens/widgets/icon_text_button.dart';
-import 'package:myvy/screens/widgets/opening_hours.dart';
-import 'package:myvy/screens/widgets/primary_button_2.dart';
 import 'package:myvy/screens/widgets/salon_categories.dart';
-import 'package:myvy/screens/widgets/salon_description.dart';
 import 'package:myvy/screens/widgets/salon_packages.dart';
 import 'package:myvy/screens/widgets/salon_rating.dart';
-import 'package:myvy/screens/widgets/salon_services.dart';
 import 'package:myvy/screens/widgets/salon_specialists.dart';
 import 'package:myvy/screens/widgets/small_button.dart';
 import 'package:myvy/utils/helpers.dart';
-import 'package:myvy/widgets/buttons/primary_button.dart';
 
 import 'widgets/booking/booking.dart';
 
@@ -236,11 +228,11 @@ Widget makeDismissable({required Widget child, context}) => GestureDetector(
 Widget booking(context) => makeDismissable(
       context: context,
       child: DraggableScrollableSheet(
-        initialChildSize: 0.7,
-        minChildSize: .6,
-        maxChildSize: 0.7,
+        initialChildSize: 0.9,
+        minChildSize: .7,
+        maxChildSize: 0.9,
         builder: (_, controller) => Container(
-          padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+          padding: EdgeInsets.only(top: 20, bottom: 20),
           decoration: BoxDecoration(
             color: whiteColor,
             borderRadius: BorderRadius.vertical(
